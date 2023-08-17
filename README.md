@@ -58,4 +58,6 @@ console.log(/[=year=]\s[=ipv4=]/.test('1992 127.0.0.1'));  // true
 
 ## To-do
 
-> Add more built-in commonly-used patterns
+* Add more built-in commonly-used patterns
+* Types?
+* Add more test cases
