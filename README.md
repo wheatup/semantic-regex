@@ -1,19 +1,25 @@
-# Reg-Ext
+# Semantic Regex
 
 > A semantic regex compiler for javascript
+
+## Install
+
+```
+npm i semantic-regex
+```
 
 ## Basic Syntax
 
 ```
-[=sementic_key=]
+[=semantic_key=]
 ```
 
 ## How to Use
 
-You may use the sementic regex to match a specific pattern, such as:
+You may use the semantic regex to match a specific pattern, such as:
 
 ```javascript
-import * from 'reg-ext';
+import * from 'semantic-regex';
 
 console.log(/[=ipv4=]/.test('127.0.0.1'));               // true
 console.log(/[=ipv4=]/.test('127.0.999.1'));             // false
@@ -39,4 +45,4 @@ console.log('hello 127.0.0.1 1992'.match(/[=year=]/g));   // ['1992']
 
 ## To-do
 
-> Add more built-in common used patterns
+> Add more built-in commonly-used patterns

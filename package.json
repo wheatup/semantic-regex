@@ -1,5 +1,5 @@
 {
-  "name": "reg-ext",
+  "name": "semantic-regex",
   "version": "0.0.1",
   "description": "A semantic regex compiler for javascript",
   "main": "index.js",
