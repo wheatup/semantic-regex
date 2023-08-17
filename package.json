@@ -1,6 +1,6 @@
 {
   "name": "semantic-regex",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A semantic regex compiler for javascript",
   "main": "index.js",
   "scripts": {

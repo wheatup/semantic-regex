@@ -55,6 +55,8 @@ console.log(/[=year=]\s[=ipv4=]/.test('1992 127.0.0.1'));  // true
 | - | - | - |
 |`ipv4`| Match IPv4 | `127.0.0.1`, `192.168.1.100`, `36.79.100.9` | 
 |`email`| Match a common email address | `test@example.com`, `alice@test.co.jp` |
+|`zh`| Match a chinese character | `你`, `好` |
+|`url`| Match a url path | `https://example.com/test?foo=bar&a=b#123`, `youtube.com` |
 
 ## To-do
 
