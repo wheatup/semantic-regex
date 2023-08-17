@@ -49,6 +49,13 @@ console.log('hello 127.0.0.1 1992'.match(/[=year=]/g));    // ['1992']
 console.log(/[=year=]\s[=ipv4=]/.test('1992 127.0.0.1'));  // true
 ```
 
+## Built-in Aliases
+
+|alias|note|example|
+| - | - | - |
+|`ipv4`| Match IPv4 | `127.0.0.1`, `192.168.1.100`, `36.79.100.9` | 
+|`email`| Match a common email address | `test@example.com`, `alice@test.co.jp` |
+
 ## To-do
 
 > Add more built-in commonly-used patterns
