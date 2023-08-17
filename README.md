@@ -35,7 +35,7 @@ In this example, `[=ipv4=]` is equivolent to `(?:(?:(?:2(?:5[0-5]|[1-4]\d)|1?[1-
 You may also register your own aliases for your regex (make sure to wrap them in non-capturing group `(?:)` to make your pattern quantifiable): 
 
 ```javascript
-import { register } from 'reg-ext';
+import { register } from 'semantic-regex';
 
 register({
 	'year': /(?:[12]\d\d\d)/
