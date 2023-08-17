@@ -1,6 +1,6 @@
 {
   "name": "semantic-regex",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A semantic regex compiler for javascript",
   "main": "index.js",
   "scripts": {
@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "semantic-regex": "^0.0.1"
+  }
 }

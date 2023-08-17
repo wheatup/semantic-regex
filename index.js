@@ -1,4 +1,4 @@
-const RegExt = (() => {
+const SementicRegex = (() => {
 	if (RegExp.__extended) return;
 
 	const SYNTAX = /\[=([\w$-]+)=\]/g;
@@ -44,5 +44,5 @@ const RegExt = (() => {
 })();
 
 if (typeof module !== 'undefined') {
-	module.exports = RegExt;
+	module.exports = SementicRegex;
 }

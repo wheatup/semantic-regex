@@ -19,7 +19,10 @@ npm i semantic-regex
 You may use the semantic regex to match a specific pattern, such as:
 
 ```javascript
-import * from 'semantic-regex';
+import SementicRegex from 'semantic-regex';
+
+// if you're using node.js
+// const SementicRegex = require('semantic-regex');
 
 console.log(/[=ipv4=]/.test('127.0.0.1'));               // true
 console.log(/[=ipv4=]/.test('127.0.999.1'));             // false
@@ -38,9 +41,12 @@ register({
 	'year': /(?:[12]\d\d\d)/
 });
 
-console.log(/[=year=]/.test('1995'));                     // true
-console.log(/[=year=]/.test('3995'));                     // false
-console.log('hello 127.0.0.1 1992'.match(/[=year=]/g));   // ['1992']
+console.log(/[=year=]/.test('1995'));                      // true
+console.log(/[=year=]/.test('3995'));                      // false
+console.log('hello 127.0.0.1 1992'.match(/[=year=]/g));    // ['1992']
+
+// you can use those aliases combined with normal regex
+console.log(/[=year=]\s[=ipv4=]/.test('1992 127.0.0.1'));  // true
 ```
 
 ## To-do
