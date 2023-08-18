@@ -14,11 +14,6 @@
 
 	const REGEXP_INJECTIONS = ['exec', 'test', Symbol.match, Symbol.matchAll, Symbol.replace, Symbol.search, Symbol.split];
 
-	const orgFuncMap = REGEXP_INJECTIONS.reduce((acc, cur) => {
-		acc[cur] = RegExp.prototype[cur];
-		return acc;
-	}, {})
-
 	const compileRegExp = regexp => {
 		if (!(regexp instanceof RegExp) || regexp.__extended || regexp === SYNTAX || regexp.sticky) return regexp;
 		const source = SYNTAX[Symbol.replace](regexp.source, (match, key) => REG_MAP[key]?.source ?? match);
@@ -29,22 +24,19 @@
 		return result;
 	}
 
-	const init = () => {
-		REGEXP_INJECTIONS.forEach(key => {
-			RegExp.prototype[key] = function (...args) {
-				return orgFuncMap[key].apply(compileRegExp(this), args);
-			}
-		});
-	}
+	REGEXP_INJECTIONS.forEach(key => {
+		const orgFunc = RegExp.prototype[key]
+		RegExp.prototype[key] = function (...args) {
+			return orgFunc.apply(compileRegExp(this), args);
+		}
+	});
 
-	init();
 	RegExp.__extended = true;
 
 	if (typeof module !== 'undefined') {
 		module.exports = {
 			register: map => {
 				Object.assign(REG_MAP, map)
-				init();
 			}
 		};
 	}
