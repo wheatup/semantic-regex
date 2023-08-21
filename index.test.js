@@ -37,3 +37,9 @@ test('custom', () => {
 	expect(/[=echo=]/i.test('EcHo')).toBe(true);
 	expect(/[=echo=]\s[=email=]/i.test('EcHo abc@gmail.com')).toBe(true);
 });
+
+
+test('ipv6', () => {
+  expect(/[=ipv6=]/.test('240e:96c:6400:603:3::3fd')).toBe(true); // 阿里云 支持 IPV6
+  expect(/[=ipv6=]/.test('240e:97c:2f:2::4c')).toBe(true); // 腾讯网 支持 IPV6
+});
